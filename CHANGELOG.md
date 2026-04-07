@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [0.0.6]
 
 ### Changed
 - Documentation: Added a note about missing API token request options due to insufficient REDCap user permissions (contact REDCap administrator) (#10)
