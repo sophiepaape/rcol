@@ -101,7 +101,7 @@ print(f"✅ pandas version: {pd.__version__}")
 import requests
 print("✅ requests imported successfully!")
 
-print("\n All dependencies installed correctly!")
+print("\n🎉 All dependencies installed correctly!")
 ```
 
 Run the test:
@@ -118,17 +118,20 @@ Run the test:
     python test_installation.py
     ```
 
-Expected output:
+Example output (will vary):
 
 ```
 ✅ rcol imported successfully!
-FAL instrument has 15 fields
-EHI instrument has 12 fields
-✅ pandas version: 2.x.x
+FAL instrument has <N> fields
+EHI instrument has <N> fields
+✅ pandas version: <version>
 ✅ requests imported successfully!
 
 🎉 All dependencies installed correctly!
 ```
+
+!!! note "Field counts may differ"
+    The number of fields printed for each instrument depends on the installed `rcol` version and any local edits you make (for example, adding/removing questions). The `pandas` version will also vary based on your Python environment.
 
 ## Next: Store Your API Key and Upload
 

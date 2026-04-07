@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+- Documentation: Added a note about missing API token request options due to insufficient REDCap user permissions (contact REDCap administrator) (#10)
+- Documentation: Clarified that Python setup verification output (instrument field counts / pandas version) can vary by environment and package edits (#10)
+
+### Fixed
+- MoCA `moca_total_score` is now a `calc` field with the education-adjusted formula instead of a plain text field (#11)
+- TAP-M Divided Attention, Executive Control, and Distractibility field name suffixes corrected to match TAP-M CSV export order (#12)
+
 ## [0.0.5] - 2025-11-27
 
 ### Changed

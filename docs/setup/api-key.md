@@ -26,6 +26,9 @@ An API token is a unique key that allows programmatic access to your REDCap proj
 2. Open your project
 3. Go to **Applications** → **API** (in the left sidebar)
 
+!!! note "Missing the API option in the sidebar?"
+    If you don’t see **Applications → API** (or the **Request API token** button), your REDCap user account likely does not have permission to request an API token for this project. Contact your REDCap administrator to enable API rights.
+
 ### 2. Request API Token
 
 Click the **"Request API token"** button.

@@ -17,6 +17,9 @@ Go to: [Step 2: Create a New Project](setup/project.md)
 
 Go to: [Step 3: Get API Access](setup/api-key.md)
 
+!!! note "Can't see the API token request?"
+	If you don’t see **Applications → API** (or the **Request API token** button) in the left sidebar, your REDCap account likely does not have permission to request API access for this project. Contact your REDCap administrator to enable the required user rights.
+
 ## 4) Set up Python and install rcol
 
 Go to: [Step 4: Setup Python Environment](setup/python-setup.md)
