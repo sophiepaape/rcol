@@ -64,13 +64,18 @@ Survey Status: ● Active
 
 ### Response Settings
 
-Configure how responses are collected:
+These settings are found under **Online Designer** → click your instrument → **Survey Settings** → **Survey Access**:
 
 | Setting | Option | Use Case |
 |---------|--------|----------|
 | **Save & Return** | ✅ Enable | Allow participants to pause and continue |
-| **E-consent** | ❌ Disable | Unless collecting signatures |
 | **Edit Completed** | ❌ Disable | Prevent response changes |
+
+E-consent settings can be found separately in the **Online Designer**:
+
+| Setting | Option | Use Case |
+|---------|--------|----------|
+| **E-consent** | ❌ Disable | Unless collecting signatures |
 
 ### Appearance Settings
 
@@ -84,11 +89,11 @@ Configure how responses are collected:
 
 ### Public Survey Link
 
-For anonymous surveys open to anyone:
+For anonymous surveys open to everyone:
 
-1. Go to **Manage Survey Participants**
-2. Click **Survey Distribution Tools**
-3. Copy the **Public Survey Link**
+1. Click **Survey Distribution Tools** in the left menu bar
+2. Click **Public Survey Link** at the top
+3. Copy the **Public Survey URL**
 
 ```
 https://redcapdev.uol.de/surveys/?s=XXXXXXXXXX
@@ -98,10 +103,11 @@ https://redcapdev.uol.de/surveys/?s=XXXXXXXXXX
 
 For tracked participants:
 
-1. Go to **Manage Survey Participants**
+1. Click **Survey Distribution Tools** in the left menu bar
 2. Click **Participant List**
-3. Add participants (email addresses)
-4. Click **Compose Survey Invitations** to send links
+3. Click **Add Participants** and add your participants by email address
+4. Click **Add Participants** to save
+5. Click **Compose Survey Invitations** to send links
 
 ### QR Codes
 
@@ -116,9 +122,9 @@ Generate QR codes for easy access:
 If using multiple surveys, set up a Survey Queue:
 
 1. Go to **Online Designer**
-2. Click **Survey Queue**
-3. Drag instruments into desired order
-4. Configure auto-start settings
+2. Drag instruments into the desired order using the left-hand side
+3. Click **Survey Queue** → **Edit Survey Queue**
+4. Configure **Auto start** and **Display order**
 
 Example queue:
 
@@ -136,8 +142,8 @@ Set up automated survey invitations:
 ### Enable Automated Invitations
 
 1. Go to **Online Designer**
-2. Click on your survey's settings
-3. Enable **Automated Survey Invitations**
+2. Click **Automated Invitations** next to your survey
+3. Configure logic and scheduling as necessary
 
 ### Configure Logic
 
