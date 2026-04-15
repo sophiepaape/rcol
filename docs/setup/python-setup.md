@@ -12,12 +12,14 @@ This guide explains how to set up Python and install the required packages for w
 
 [uv](https://docs.astral.sh/uv/) is a fast Python package manager that handles both Python installation and package management.
 
+Within your computer terminal, copy and paste the commands below (separated by `#` comments) one chunk at a time:
+
 === "Windows"
 
     ```powershell
     # Install uv using PowerShell
     powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
-    
+
     # Restart your terminal, then verify installation
     uv --version
     ```
@@ -27,13 +29,19 @@ This guide explains how to set up Python and install the required packages for w
     ```bash
     # Install uv
     curl -LsSf https://astral.sh/uv/install.sh | sh
-    
+
     # Restart your terminal, then verify installation
     uv --version
     ```
 
+!!! note "'uv' is not recognized?"
+    You may see an error message about not recognizing `uv`. The installation may still have been successful. **Restart your terminal** and try `uv --version` again to verify.
+
 
 ## Create a Project Directory
+
+!!! note "Know your file paths"
+    Ensure you know where these files are being saved. Update the file path below to match your preferred location.
 
 Create a directory for your REDCap project:
 
@@ -54,6 +62,8 @@ Create a directory for your REDCap project:
     ```
 
 ## Install rcol
+
+Choose **one** of the two methods below (either **uv** or **pip**) and follow that method for the remainder of this guide.
 
 ### Using uv (Recommended)
 
@@ -83,7 +93,21 @@ pip install rcol
 
 ## Verify Installation
 
-Create a test script to verify everything works:
+Create a test script in a new file called `test_installation.py`:
+
+=== "Windows"
+
+    ```powershell
+    notepad test_installation.py
+    ```
+
+=== "Linux/macOS"
+
+    ```bash
+    open -e test_installation.py
+    ```
+
+Paste the following code inside the new file and **save**:
 
 ```python title="test_installation.py"
 # Test rcol installation
@@ -104,7 +128,7 @@ print("✅ requests imported successfully!")
 print("\n🎉 All dependencies installed correctly!")
 ```
 
-Run the test:
+Navigate back to your terminal and run the test:
 
 === "Using uv"
 
@@ -133,9 +157,9 @@ EHI instrument has <N> fields
 !!! note "Field counts may differ"
     The number of fields printed for each instrument depends on the installed `rcol` version and any local edits you make (for example, adding/removing questions). The `pandas` version will also vary based on your Python environment.
 
-## Next: Store Your API Key and Upload
+## About Your API Key
 
-In Step 5, you’ll store your REDCap API key locally (recommended: a `.env` file using `RC_API_KEY`) and then upload your chosen instruments.
+In the next step, you will store your REDCap API key locally and upload your instruments. Detailed instructions for saving it as a `.env` file are provided in **[Step 5: Upload Instruments](upload-instruments.md)**.
 
 ## What's Next?
 
