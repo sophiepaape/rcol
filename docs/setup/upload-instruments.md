@@ -11,15 +11,44 @@ This guide explains how to upload `rcol` instrument templates to your REDCap pro
 
 ### 1. Store Your API Key
 
-You need your REDCap API key available locally as `RC_API_KEY`.
+You need your REDCap API key stored locally as `RC_API_KEY`. The recommended approach is to save it in a `.env` file.
 
-**Recommended: `.env` file (works well with the tutorials)**
+#### Create the `.env` file
 
-```ini title=".env"
-RC_API_KEY=YOUR_API_TOKEN_HERE
-```
+Navigate to your project directory (created in [Step 4](python-setup.md)) in your terminal:
 
-**Alternative: Environment variable**
+=== "Windows"
+
+    ```powershell
+    notepad .env
+    ```
+
+    This opens a new `.env` document. Type the following inside (replacing the placeholder with your actual token from [Step 3](api-key.md)):
+
+    ```ini
+    RC_API_KEY=YOUR_API_TOKEN_HERE
+    ```
+
+    Save the file and ensure it is named exactly `.env` (not `.env.txt`).
+
+=== "Linux/macOS"
+
+    ```bash
+    open -e .env
+    ```
+
+    This opens a new `.env` document. Type the following inside (replacing the placeholder with your actual token from [Step 3](api-key.md)):
+
+    ```ini
+    RC_API_KEY=YOUR_API_TOKEN_HERE
+    ```
+
+    Save the file and ensure it is named exactly `.env`.
+
+!!! note "Hidden files"
+    Files starting with `.` are hidden by default. To view your `.env` file on Windows, open **File Explorer** and click **View** → **Hidden Items**. On macOS, press ++cmd+shift+period++ in Finder.
+
+**Alternative: Set as an environment variable (temporary, lasts only for the current terminal session)**
 
 === "Windows (PowerShell)"
 
@@ -39,18 +68,59 @@ RC_API_KEY=YOUR_API_TOKEN_HERE
     export RC_API_KEY="YOUR_API_TOKEN_HERE"
     ```
 
-!!! warning "Security"
-    Never commit `.env` files or API keys to version control.
+#### Keep your API key private with `.gitignore`
 
-    Add this to your `.gitignore`:
+It is important that your API token remains private. If you use Git, create a `.gitignore` file so your `.env` is never uploaded:
+
+=== "Windows"
+
+    ```powershell
+    notepad .gitignore
+    ```
+
+    Type the following inside the `.gitignore` file:
+
     ```text
-    # Secrets
     .env
     ```
 
-### 2. Create the Upload Script
+    Save the file to your project directory.
 
-Create a new Python file:
+=== "Linux/macOS"
+
+    ```bash
+    open -e .gitignore
+    ```
+
+    Type the following inside the `.gitignore` file:
+
+    ```text
+    .env
+    ```
+
+    Save the file to your project directory.
+
+!!! warning "Security"
+    Never commit `.env` files or API keys to version control.
+
+### 2. Set Up Visual Studio Code
+
+We recommend using **Visual Studio Code (VS Code)** to edit and run your Python scripts.
+
+1. **Download** [Visual Studio Code](https://code.visualstudio.com/) and install it
+2. **Open your project folder**: Click **File** → **Open Folder** → navigate to the `redcap-project` directory created in [Step 4](python-setup.md) → **Select Folder**
+3. **Install the Python extension**:
+    - Click **Extensions** in the left sidebar (or press ++ctrl+shift+x++)
+    - Search for `Python`
+    - Install the one published by **Microsoft**
+4. **Select your Python interpreter**:
+    - Open the Command Palette: click the top search bar and choose **Show and Run Commands** (or press ++ctrl+shift+p++)
+    - Type `Python: Select Interpreter`
+    - Select the version that includes `(.venv)`, e.g. `Python 3.x.x ('.venv')`
+
+### 3. Create the Upload Script
+
+In VS Code, click **File** → **New File** and save it as `upload_instruments.py`. Paste the following code and save:
 
 ```python title="upload_instruments.py"
 from dotenv import load_dotenv
@@ -81,7 +151,9 @@ except RedcapError as e:
     print(f"❌ Error uploading to REDCap: {e}")
 ```
 
-### 3. Run the Script
+### 4. Run the Script
+
+Navigate back to your terminal and run:
 
 === "Using uv"
 
@@ -102,7 +174,7 @@ Expected output:
 ✅ Successfully uploaded 45 fields to REDCap
 ```
 
-### 4. Verify in REDCap
+### 5. Verify in REDCap
 
 1. Log in to REDCap
 2. Open your project
@@ -111,7 +183,19 @@ Expected output:
 
 ## Upload Selected Instruments
 
-To upload specific instruments:
+To upload only specific instruments, modify the import and `pd.concat(...)` list in your script.
+
+!!! tip "Finding available instruments"
+    To see all instruments available in `rcol`, check the [Instruments documentation](../instruments/index.md) or run the following in Python:
+
+    ```python
+    import rcol.instruments
+    import rcol.rtg
+    print(dir(rcol.instruments))
+    print(dir(rcol.rtg))
+    ```
+
+Example with selected RTG instruments:
 
 ```python title="upload_selected.py"
 from dotenv import load_dotenv
