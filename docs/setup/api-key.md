@@ -51,9 +51,9 @@ Once approved:
 !!! danger "Important"
     Copy and store your token securely. You may not be able to view it again.
 
-## Next: Store Your API Key
+## About Storing Your API Key
 
-In the next step, you will store the API key locally (recommended: a `.env` file using the name `RC_API_KEY`) and upload instruments from `rcol`.
+You will need to store your API key locally to use it with `rcol`. Detailed instructions for saving it as a `.env` file are provided in **[Step 5: Upload Instruments](upload-instruments.md)**. For now, just make sure you know how to access your token from **Applications** → **API** in REDCap.
 
 ## API Permissions
 
