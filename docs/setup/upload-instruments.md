@@ -22,8 +22,8 @@ Navigate to your project directory (created in [Step 4](python-setup.md)) in you
     ```powershell
     notepad .env
     ```
-
-    This opens a new `.env` document. Type the following inside (replacing the placeholder with your actual token from [Step 3](api-key.md)):
+    This opens a new .env document. Type the following inside
+    (replacing the placeholder with your actual token from Step 3):
 
     ```ini
     RC_API_KEY=YOUR_API_TOKEN_HERE
@@ -36,8 +36,8 @@ Navigate to your project directory (created in [Step 4](python-setup.md)) in you
     ```bash
     open -e .env
     ```
-
-    This opens a new `.env` document. Type the following inside (replacing the placeholder with your actual token from [Step 3](api-key.md)):
+    This opens a new .env document. Type the following inside
+    (replacing the placeholder with your actual token from Step 3):
 
     ```ini
     RC_API_KEY=YOUR_API_TOKEN_HERE
@@ -46,7 +46,7 @@ Navigate to your project directory (created in [Step 4](python-setup.md)) in you
     Save the file and ensure it is named exactly `.env`.
 
 !!! note "Hidden files"
-    Files starting with `.` are hidden by default. To view your `.env` file on Windows, open **File Explorer** and click **View** → **Hidden Items**. On macOS, press ++cmd+shift+period++ in Finder.
+    Files starting with `.` are hidden by default. To view your `.env` file on Windows, open **File Explorer** and click **View** → **Hidden Items**. On macOS, press `cmd+shift+period` in Finder.
 
 **Alternative: Set as an environment variable (temporary, lasts only for the current terminal session)**
 
@@ -76,9 +76,8 @@ It is important that your API token remains private. If you use Git, create a `.
 
     ```powershell
     notepad .gitignore
+    # Type the following inside the .gitignore file:
     ```
-
-    Type the following inside the `.gitignore` file:
 
     ```text
     .env
@@ -90,9 +89,8 @@ It is important that your API token remains private. If you use Git, create a `.
 
     ```bash
     open -e .gitignore
+    # Type the following inside the .gitignore file:
     ```
-
-    Type the following inside the `.gitignore` file:
 
     ```text
     .env
