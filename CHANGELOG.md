@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.7]
+
+### Changed
+- MoCA Sum (`moca_raw`) calculated field now includes education adjustment: `+ if([moca_edu] < 13, 1, 0)` for +1 point if ≤12 years of education
+- MoCA Sum field note updated to `"0-30; +1 point if =< 12 years of education"`
+- Documentation: Improved Step 3 (API key), Step 4 (Python setup), Step 5 (API key storage, .gitignore, VS Code setup), and Step 6 (survey mode navigation paths)
+
 ## [0.0.6]
 
 ### Changed
