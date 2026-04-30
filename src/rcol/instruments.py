@@ -189,7 +189,7 @@ fal_data = [
         "field_label": "Wie viele Stunden haben Sie letzte Nacht geschlafen? (Stunden)",
         "choices": "",
         "field_note": "",
-        "text_validation_type_or_show_slider_number": "integer",
+        "text_validation_type_or_show_slider_number": "number",
         "text_validation_min": "0",
         "text_validation_max": "24",
         "identifier": "",
